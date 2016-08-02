@@ -45,6 +45,11 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
   notify { "Are we having fun yet?": }
   
+package {'cowsay':
+  ensure =>present,
+  provider =>gem,
+  }
+  
  exec {"cowsay 'Welcome to ${::fqdn}!'>/etc/motd":
   path =>'/usr/bin:/usr/local/bin',
   creates =>'/etc/motd',
