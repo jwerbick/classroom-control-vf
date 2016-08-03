@@ -46,18 +46,4 @@ node default {
   notify { "Are we having fun yet?": }
 }
   
-node 'jwerbick.puppetlabs.vm' {
-  include examples::fundamentals
-  include users
-  include skeleton
-  
- exec {"cowsay 'Welcome to ${::fqdn}!'>/etc/motd":
-  path =>'/usr/bin:/usr/local/bin',
-  creates =>'/etc/motd',
-    }
-    
-  host {'jwerbick.puppetlabs.vm':
-    ensure =>present,
-    ip =>'127.0.0.1',
-    }
-}
+
