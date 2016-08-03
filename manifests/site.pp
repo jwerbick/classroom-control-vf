@@ -46,7 +46,7 @@ node default {
   notify { "Are we having fun yet?": }
 }
   
-node 'jwerbick.puppetlabs.vb' {
+node 'jwerbick.puppetlabs.vm' {
   include examples::fundamentals
   
  exec {"cowsay 'Welcome to ${::fqdn}!'>/etc/motd":
