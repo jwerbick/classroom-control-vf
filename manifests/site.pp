@@ -44,14 +44,18 @@ node default {
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}": }
   notify { "Are we having fun yet?": }
+}
   
-package {'cowsay':
-  ensure =>present,
-  provider =>gem,
-  }
+node 'jwerbick.puppetlabs.vb' {
+  include examples::fundamentals
   
  exec {"cowsay 'Welcome to ${::fqdn}!'>/etc/motd":
   path =>'/usr/bin:/usr/local/bin',
   creates =>'/etc/motd',
+    }
+    
+  host {'jwerbick.puppetlabs.vm':
+    ensure =>present
+    ip =>'127.0.0.1'
     }
 }
