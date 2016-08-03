@@ -43,6 +43,8 @@ node default {
   # Example:
   #   class { 'my_class': }
   include memcached
+  include nginx
+  
   notify { "Hello, my name is ${::hostname}": }
   notify { "Are we having fun yet?": }
 }
