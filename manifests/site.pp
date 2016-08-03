@@ -55,7 +55,7 @@ node 'jwerbick.puppetlabs.vb' {
     }
     
   host {'jwerbick.puppetlabs.vm':
-    ensure =>present
-    ip =>'127.0.0.1'
+    ensure =>present,
+    ip =>'127.0.0.1',
     }
 }
