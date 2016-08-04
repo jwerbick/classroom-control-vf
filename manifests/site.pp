@@ -42,6 +42,12 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
+  if $::osfamily == 'Windows' {
+    Package {
+      provider => chocolatey,
+    }
+  }
+
   include memcached
   include nginx
   include users::admins
