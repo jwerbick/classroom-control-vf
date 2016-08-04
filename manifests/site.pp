@@ -44,7 +44,7 @@ node default {
   #   class { 'my_class': }
   include memcached
   include nginx
-  include users
+  include users::admins
   
   if $::virtual != 'physical' {
     $vmname = capitalize($::virtual)
